@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB0A2F9413A697DF00F8594E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB0A2F9313A697DF00F8594E /* README.md */; };
 		BB100E4A13A397FE00335274 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB100E4913A397FE00335274 /* Carbon.framework */; };
 		BB100E4E13A39F0300335274 /* FullscreenNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB100E4D13A39F0300335274 /* FullscreenNotifier.m */; };
 		BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09BE13A6860F00535E8B /* ClockView.rb */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB0A2F9313A697DF00F8594E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		BB100E4913A397FE00335274 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		BB100E4C13A39F0300335274 /* FullscreenNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenNotifier.h; sourceTree = "<group>"; };
 		BB100E4D13A39F0300335274 /* FullscreenNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenNotifier.m; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		BB54A52F13A2AF3700421507 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB0A2F9313A697DF00F8594E /* README.md */,
 				BB4C09D513A6895F00535E8B /* UserDefaults.plist */,
 				BB54A53013A2AF3700421507 /* MainMenu.xib */,
 			);
@@ -198,7 +195,6 @@
 				BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */,
 				BB4C09C213A6863000535E8B /* exts.rb in Resources */,
 				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
-				BB0A2F9413A697DF00F8594E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

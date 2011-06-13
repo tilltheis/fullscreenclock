@@ -18,10 +18,12 @@ module CocoaCompatibility
     end
 
     # set ivar and send out notifications
+    # pass a block to do non-atomic operations
     def set_ivar(name, value)
         name = name.to_s
         willChangeValueForKey(name)
         instance_variable_set(('@'+name).to_sym, value)
+        yield if block_given?
         didChangeValueForKey(name)
     end
 end
