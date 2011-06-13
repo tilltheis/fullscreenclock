@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB0A2F9413A697DF00F8594E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB0A2F9313A697DF00F8594E /* README.md */; };
+		BB100E4A13A397FE00335274 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB100E4913A397FE00335274 /* Carbon.framework */; };
+		BB100E4E13A39F0300335274 /* FullscreenNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB100E4D13A39F0300335274 /* FullscreenNotifier.m */; };
+		BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09BE13A6860F00535E8B /* ClockView.rb */; };
+		BB4C09C213A6863000535E8B /* exts.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09C113A6863000535E8B /* exts.rb */; };
+		BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09D513A6895F00535E8B /* UserDefaults.plist */; };
+		BB54A52213A2AF3600421507 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB54A52113A2AF3600421507 /* Cocoa.framework */; };
+		BB54A52413A2AF3600421507 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB54A52313A2AF3600421507 /* MacRuby.framework */; };
+		BB54A52B13A2AF3600421507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB54A52913A2AF3600421507 /* InfoPlist.strings */; };
+		BB54A52E13A2AF3600421507 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB54A52D13A2AF3600421507 /* main.m */; };
+		BB54A53213A2AF3700421507 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53013A2AF3700421507 /* MainMenu.xib */; };
+		BB54A53513A2AF3700421507 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53413A2AF3700421507 /* rb_main.rb */; };
+		BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53613A2AF3700421507 /* AppDelegate.rb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB0A2F9313A697DF00F8594E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BB100E4913A397FE00335274 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		BB100E4C13A39F0300335274 /* FullscreenNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenNotifier.h; sourceTree = "<group>"; };
+		BB100E4D13A39F0300335274 /* FullscreenNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenNotifier.m; sourceTree = "<group>"; };
+		BB4C09BE13A6860F00535E8B /* ClockView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ClockView.rb; sourceTree = "<group>"; };
+		BB4C09C113A6863000535E8B /* exts.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = exts.rb; sourceTree = "<group>"; };
+		BB4C09D513A6895F00535E8B /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		BB54A51D13A2AF3600421507 /* fullscreenclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fullscreenclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB54A52113A2AF3600421507 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BB54A52313A2AF3600421507 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = System/Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		BB54A52813A2AF3600421507 /* fullscreenclock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "fullscreenclock-Info.plist"; sourceTree = "<group>"; };
+		BB54A52A13A2AF3600421507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BB54A52C13A2AF3600421507 /* fullscreenclock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fullscreenclock-Prefix.pch"; sourceTree = "<group>"; };
+		BB54A52D13A2AF3600421507 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BB54A53113A2AF3700421507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BB54A53413A2AF3700421507 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		BB54A53613A2AF3700421507 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB54A51A13A2AF3600421507 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB100E4A13A397FE00335274 /* Carbon.framework in Frameworks */,
+				BB54A52213A2AF3600421507 /* Cocoa.framework in Frameworks */,
+				BB54A52413A2AF3600421507 /* MacRuby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB54A51213A2AF3500421507 = {
+			isa = PBXGroup;
+			children = (
+				BB100E4913A397FE00335274 /* Carbon.framework */,
+				BB54A52613A2AF3600421507 /* fullscreenclock */,
+				BB54A52013A2AF3600421507 /* Frameworks */,
+				BB54A51E13A2AF3600421507 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB54A51E13A2AF3600421507 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB54A51D13A2AF3600421507 /* fullscreenclock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB54A52013A2AF3600421507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB54A52113A2AF3600421507 /* Cocoa.framework */,
+				BB54A52313A2AF3600421507 /* MacRuby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB54A52613A2AF3600421507 /* fullscreenclock */ = {
+			isa = PBXGroup;
+			children = (
+				BB54A53613A2AF3700421507 /* AppDelegate.rb */,
+				BB4C09C113A6863000535E8B /* exts.rb */,
+				BB4C09BE13A6860F00535E8B /* ClockView.rb */,
+				BB100E4C13A39F0300335274 /* FullscreenNotifier.h */,
+				BB100E4D13A39F0300335274 /* FullscreenNotifier.m */,
+				BB54A52F13A2AF3700421507 /* Resources */,
+				BB54A53313A2AF3700421507 /* Other Sources */,
+				BB54A52713A2AF3600421507 /* Supporting Files */,
+			);
+			path = fullscreenclock;
+			sourceTree = "<group>";
+		};
+		BB54A52713A2AF3600421507 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB54A52813A2AF3600421507 /* fullscreenclock-Info.plist */,
+				BB54A52913A2AF3600421507 /* InfoPlist.strings */,
+				BB54A52C13A2AF3600421507 /* fullscreenclock-Prefix.pch */,
+				BB54A52D13A2AF3600421507 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB54A52F13A2AF3700421507 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB0A2F9313A697DF00F8594E /* README.md */,
+				BB4C09D513A6895F00535E8B /* UserDefaults.plist */,
+				BB54A53013A2AF3700421507 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BB54A53313A2AF3700421507 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BB54A53413A2AF3700421507 /* rb_main.rb */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		BB54A52513A2AF3600421507 /* Deployment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--compile --embed";
+			buildConfigurationList = BB54A53D13A2AF3700421507 /* Build configuration list for PBXLegacyTarget "Deployment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby_deploy;
+			dependencies = (
+			);
+			name = Deployment;
+			passBuildSettingsInEnvironment = 1;
+			productName = Deployment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		BB54A51C13A2AF3600421507 /* fullscreenclock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB54A53A13A2AF3700421507 /* Build configuration list for PBXNativeTarget "fullscreenclock" */;
+			buildPhases = (
+				BB54A51913A2AF3600421507 /* Sources */,
+				BB54A51A13A2AF3600421507 /* Frameworks */,
+				BB54A51B13A2AF3600421507 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fullscreenclock;
+			productName = fullscreenclock;
+			productReference = BB54A51D13A2AF3600421507 /* fullscreenclock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB54A51413A2AF3500421507 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = BB54A51713A2AF3500421507 /* Build configuration list for PBXProject "fullscreenclock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BB54A51213A2AF3500421507;
+			productRefGroup = BB54A51E13A2AF3600421507 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB54A51C13A2AF3600421507 /* fullscreenclock */,
+				BB54A52513A2AF3600421507 /* Deployment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB54A51B13A2AF3600421507 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB54A52B13A2AF3600421507 /* InfoPlist.strings in Resources */,
+				BB54A53213A2AF3700421507 /* MainMenu.xib in Resources */,
+				BB54A53513A2AF3700421507 /* rb_main.rb in Resources */,
+				BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */,
+				BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */,
+				BB4C09C213A6863000535E8B /* exts.rb in Resources */,
+				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
+				BB0A2F9413A697DF00F8594E /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB54A51913A2AF3600421507 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB54A52E13A2AF3600421507 /* main.m in Sources */,
+				BB100E4E13A39F0300335274 /* FullscreenNotifier.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB54A52913A2AF3600421507 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB54A52A13A2AF3600421507 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BB54A53013A2AF3700421507 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB54A53113A2AF3700421507 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB54A53813A2AF3700421507 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		BB54A53913A2AF3700421507 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		BB54A53B13A2AF3700421507 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fullscreenclock/fullscreenclock-Prefix.pch";
+				INFOPLIST_FILE = "fullscreenclock/fullscreenclock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BB54A53C13A2AF3700421507 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fullscreenclock/fullscreenclock-Prefix.pch";
+				INFOPLIST_FILE = "fullscreenclock/fullscreenclock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BB54A53E13A2AF3700421507 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BB54A53F13A2AF3700421507 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB54A51713A2AF3500421507 /* Build configuration list for PBXProject "fullscreenclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB54A53813A2AF3700421507 /* Debug */,
+				BB54A53913A2AF3700421507 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB54A53A13A2AF3700421507 /* Build configuration list for PBXNativeTarget "fullscreenclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB54A53B13A2AF3700421507 /* Debug */,
+				BB54A53C13A2AF3700421507 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB54A53D13A2AF3700421507 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB54A53E13A2AF3700421507 /* Debug */,
+				BB54A53F13A2AF3700421507 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB54A51413A2AF3500421507 /* Project object */;
+}
