@@ -3,7 +3,6 @@
 #import "FullscreenNotifier.h"
 
 #import <Carbon/Carbon.h>
-#import <ApplicationServices/ApplicationServices.h>
 
 id target;
 SEL enterSelector, exitSelector;
