@@ -229,29 +229,32 @@ class AppDelegate
     
 
     def background_alpha=(alpha)
-        set_ivar(:background_alpha, alpha)
-        defaults.setFloat(alpha, forKey:'background_alpha')
-        
-        self.clock_windows.each do |win|
-            win.backgroundColor = NSColor.colorWithCalibratedWhite(0, alpha:alpha)
+        set_ivar(:background_alpha, alpha) do
+            defaults.setFloat(alpha, forKey:'background_alpha')
+            
+            self.clock_windows.each do |win|
+                win.backgroundColor = NSColor.colorWithCalibratedWhite(0, alpha:alpha)
+            end
         end
     end
     
     def face_alpha=(alpha)
-        set_ivar(:face_alpha, alpha)
-        defaults.setFloat(alpha, forKey:'face_alpha')
-        
-        self.clock_windows.each do |win|
-            win.contentView.subviews.first.face_alpha = alpha
+        set_ivar(:face_alpha, alpha) do
+            defaults.setFloat(alpha, forKey:'face_alpha')
+            
+            self.clock_windows.each do |win|
+                win.contentView.subviews.first.face_alpha = alpha
+            end
         end
     end
     
     def hands_alpha=(alpha)
-        set_ivar(:hands_alpha, alpha)
-        defaults.setFloat(alpha, forKey:'hands_alpha')
-        
-        self.clock_windows.each do |win|
-            win.contentView.subviews.first.hands_alpha = alpha
+        set_ivar(:hands_alpha, alpha) do
+            defaults.setFloat(alpha, forKey:'hands_alpha')
+            
+            self.clock_windows.each do |win|
+                win.contentView.subviews.first.hands_alpha = alpha
+            end
         end
     end
     
