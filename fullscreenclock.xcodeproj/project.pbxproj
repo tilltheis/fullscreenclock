@@ -20,7 +20,6 @@
 		BB54A53213A2AF3700421507 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53013A2AF3700421507 /* MainMenu.xib */; };
 		BB54A53513A2AF3700421507 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53413A2AF3700421507 /* rb_main.rb */; };
 		BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53613A2AF3700421507 /* AppDelegate.rb */; };
-		BBF6E70213A725C000C4429B /* fullscreenclock.icns in Resources */ = {isa = PBXBuildFile; fileRef = BBF6E70113A725C000C4429B /* fullscreenclock.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		BB54A53113A2AF3700421507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BB54A53413A2AF3700421507 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		BB54A53613A2AF3700421507 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
-		BBF6E70113A725C000C4429B /* fullscreenclock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fullscreenclock.icns; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				BB23965A13B4E0F900BD346C /* fullscreenclock.icns */,
-				BBF6E70113A725C000C4429B /* fullscreenclock.icns */,
 				BB4C09D513A6895F00535E8B /* UserDefaults.plist */,
 				BB54A53013A2AF3700421507 /* MainMenu.xib */,
 			);
@@ -201,7 +198,6 @@
 				BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */,
 				BB4C09C213A6863000535E8B /* exts.rb in Resources */,
 				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
-				BBF6E70213A725C000C4429B /* fullscreenclock.icns in Resources */,
 				BB23965B13B4E0F900BD346C /* fullscreenclock.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
