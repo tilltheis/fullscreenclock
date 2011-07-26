@@ -202,21 +202,24 @@ class AppDelegate
         fade(0.0, 'fade_in_do:')
     end
     
-    def fade_in_do(timer)        
-        timer.userInfo[:alpha] += fading_step
-        clock_windows.each { |w| w.alphaValue = timer.userInfo[:alpha] }
-        
-        timer.invalidate if timer.userInfo[:alpha] >= 1.0
-    end
-    
-    
     def fade_out()
         fade(1.0, 'fade_out_do:')
     end
+    
+    
+    def fade_step_do(timer, step)
+        timer.userInfo[:alpha] += step
+        clock_windows.each { |w| w.alphaValue = timer.userInfo[:alpha] }
+    end
+    
+    
+    def fade_in_do(timer)
+        fade_step_do(timer, +fading_step)
+        timer.invalidate if timer.userInfo[:alpha] >= 1.0
+    end
 
     def fade_out_do(timer)
-        timer.userInfo[:alpha] -= fading_step
-        clock_windows.each { |w| w.alphaValue = timer.userInfo[:alpha] }
+        fade_step_do(timer, -fading_step)
         
         if timer.userInfo[:alpha] <= 0.0
             timer.invalidate
