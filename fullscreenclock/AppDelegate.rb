@@ -100,8 +100,8 @@ class AppDelegate
     def setup_clocks()
         clean_up
         
-        t = Time.now
-        fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min + 1)
+        t = Time.now + 60 # +1 minute
+        fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min)
         self.minute_timer = NSTimer.alloc.initWithFireDate(fire_date,
                                                            interval:60,
                                                            target:self,
@@ -115,6 +115,7 @@ class AppDelegate
         # (we can't use delete() because its destructive)
         screens = NSScreen.screens.drop(1)
         
+        t = Time.now
         screens.each { |scr| setup_screen(scr, t) }
         
         window.orderFront(self) if window.isKeyWindow
