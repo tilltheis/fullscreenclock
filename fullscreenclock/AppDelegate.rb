@@ -184,11 +184,12 @@ class AppDelegate
         end
         
         self.fading_timer =
-            NSTimer.scheduledTimerWithTimeInterval(fading_interval,
-                                                   target:self,
-                                                   selector:fading_selector,
-                                                   userInfo:{ :alpha => alpha },
-                                                   repeats:true)
+            NSTimer.timerWithTimeInterval(fading_interval,
+                                          target:self,
+                                          selector:fading_selector,
+                                          userInfo:{ :alpha => alpha },
+                                          repeats:true)
+        NSRunLoop.currentRunLoop.addTimer(self.fading_timer, forMode:NSRunLoopCommonModes)
     end
     
     
