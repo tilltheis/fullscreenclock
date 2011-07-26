@@ -58,7 +58,8 @@ class AppDelegate
     
     def default_values()
         path = NSBundle.mainBundle.pathForResource("UserDefaults", ofType:"plist")
-        dict = NSDictionary.dictionaryWithContentsOfFile(path);    end
+        dict = NSDictionary.dictionaryWithContentsOfFile(path);
+    end
     
     def init_defaults()
         self.defaults = NSUserDefaults.standardUserDefaults
