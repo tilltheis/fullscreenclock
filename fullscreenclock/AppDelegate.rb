@@ -101,7 +101,7 @@ class AppDelegate
         clean_up
         
         t = Time.now
-        fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min, t.sec + 1)
+        fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min + 1)
         self.minute_timer = NSTimer.alloc.initWithFireDate(fire_date,
                                                            interval:60,
                                                            target:self,
