@@ -118,6 +118,7 @@ class AppDelegate
         t = Time.now
         screens.each { |scr| setup_screen(scr, t) }
         
+        # float command window above the clock windows
         window.orderFront(self) if window.isKeyWindow
         
         fade_in
@@ -190,6 +191,9 @@ class AppDelegate
                                           selector:fading_selector,
                                           userInfo:{ :alpha => alpha },
                                           repeats:true)
+        
+        # don't use NSDefaultRunloopMode because Mac OS X Lion pauses timers
+        # in that mode whenever the user drags NSSliders around
         NSRunLoop.currentRunLoop.addTimer(self.fading_timer, forMode:NSRunLoopCommonModes)
     end
     

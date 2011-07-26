@@ -7,6 +7,7 @@ module CocoaCompatibility
     module ClassMethods
         def method_added(name)
             # sync cocoa and ruby setters
+            # do it here because macruby doesn't do it properly
             if name[-1] == '='
                 cocoa_name = 'set' + name[0].upcase + name[1, name.length-2]
 
