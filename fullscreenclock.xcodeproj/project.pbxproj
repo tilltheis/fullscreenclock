@@ -132,7 +132,7 @@
 /* Begin PBXLegacyTarget section */
 		BB54A52513A2AF3600421507 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--embed";
+			buildArgumentsString = "--embed --stdlib date --stdlib enumerator";
 			buildConfigurationList = BB54A53D13A2AF3700421507 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
