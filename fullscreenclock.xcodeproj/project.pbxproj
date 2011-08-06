@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BB100E4A13A397FE00335274 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB100E4913A397FE00335274 /* Carbon.framework */; };
 		BB100E4E13A39F0300335274 /* FullscreenNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB100E4D13A39F0300335274 /* FullscreenNotifier.m */; };
-		BB23965B13B4E0F900BD346C /* fullscreenclock.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB23965A13B4E0F900BD346C /* fullscreenclock.icns */; };
 		BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09BE13A6860F00535E8B /* ClockView.rb */; };
 		BB4C09C213A6863000535E8B /* exts.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09C113A6863000535E8B /* exts.rb */; };
 		BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB4C09D513A6895F00535E8B /* UserDefaults.plist */; };
@@ -20,13 +19,13 @@
 		BB54A53213A2AF3700421507 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53013A2AF3700421507 /* MainMenu.xib */; };
 		BB54A53513A2AF3700421507 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53413A2AF3700421507 /* rb_main.rb */; };
 		BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53613A2AF3700421507 /* AppDelegate.rb */; };
+		BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB749E6F13ED841F001D3324 /* fullscreenclock.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB100E4913A397FE00335274 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		BB100E4C13A39F0300335274 /* FullscreenNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenNotifier.h; sourceTree = "<group>"; };
 		BB100E4D13A39F0300335274 /* FullscreenNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenNotifier.m; sourceTree = "<group>"; };
-		BB23965A13B4E0F900BD346C /* fullscreenclock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fullscreenclock.icns; sourceTree = "<group>"; };
 		BB4C09BE13A6860F00535E8B /* ClockView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ClockView.rb; sourceTree = "<group>"; };
 		BB4C09C113A6863000535E8B /* exts.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = exts.rb; sourceTree = "<group>"; };
 		BB4C09D513A6895F00535E8B /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		BB54A53113A2AF3700421507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BB54A53413A2AF3700421507 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		BB54A53613A2AF3700421507 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		BB749E6F13ED841F001D3324 /* fullscreenclock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fullscreenclock.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		BB54A52F13A2AF3700421507 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB23965A13B4E0F900BD346C /* fullscreenclock.icns */,
+				BB749E6F13ED841F001D3324 /* fullscreenclock.icns */,
 				BB4C09D513A6895F00535E8B /* UserDefaults.plist */,
 				BB54A53013A2AF3700421507 /* MainMenu.xib */,
 			);
@@ -199,7 +199,7 @@
 				BB4C09BF13A6860F00535E8B /* ClockView.rb in Resources */,
 				BB4C09C213A6863000535E8B /* exts.rb in Resources */,
 				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
-				BB23965B13B4E0F900BD346C /* fullscreenclock.icns in Resources */,
+				BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
