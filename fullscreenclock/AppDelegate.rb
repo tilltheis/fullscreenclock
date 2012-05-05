@@ -62,6 +62,22 @@ class AppDelegate
                 clock_windows << w
             end
         end
+        
+        
+        # add clocks to new screens
+        if fullscreen_notifier.isFullscreenMode
+            t = Time.now
+            used_screens = clock_windows.map &:screen
+            unused_screens = allowed_screens - used_screens
+            unused_screens.each do |scr|
+                w = setup_screen(scr, t)
+                w.alphaValue = 1.0 # no fading
+            end
+        end
+        
+        
+        # stop timer etc. if no clocks are left
+        teardown_clocks if clock_windows.empty?
     end
     
     
@@ -177,10 +193,12 @@ class AppDelegate
         window.orderFront(self)
         
         self.clock_windows << window
+        
+        window
     end
     
     def teardown_clocks()
-        minute_timer.invalidate
+        minute_timer.invalidate unless minute_timer.nil?
         fade_out
     end
     

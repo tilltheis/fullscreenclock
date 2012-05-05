@@ -15,5 +15,6 @@
 }
 
 - (void)setFullscreenCallbackTarget:(id)target enterSelector:(SEL)enterSel exitSelector:(SEL)exitSel;
+- (bool)isFullscreenMode;
 
 @end

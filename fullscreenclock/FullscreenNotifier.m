@@ -6,22 +6,24 @@
 
 id target;
 SEL enterSelector, exitSelector;
+bool isFullscreenMode;
 
 OSErr menuBarShownHidden(EventHandlerCallRef inHandlerRef, EventRef inEvent, void *data)
 {
     if (GetEventKind(inEvent) == kEventMenuBarHidden) {
         if (target && enterSelector) {
+            isFullscreenMode = YES;
             [target performSelector:enterSelector];
         }
     } else {
         if (target && exitSelector) {
+            isFullscreenMode = NO;
             [target performSelector:exitSelector];
         }
     }
     
     return 0;
 }
-
 
 
 @implementation FullscreenNotifier
@@ -58,6 +60,11 @@ OSErr menuBarShownHidden(EventHandlerCallRef inHandlerRef, EventRef inEvent, voi
     target        = target_;
     enterSelector = enterSel;
     exitSelector  = exitSel;
+}
+
+- (bool)isFullscreenMode
+{
+    return isFullscreenMode;
 }
 
 @end
