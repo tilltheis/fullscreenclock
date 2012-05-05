@@ -147,6 +147,11 @@ class AppDelegate
         window.backgroundColor = NSColor.colorWithCalibratedWhite(0, alpha:background_alpha)
         window.hasShadow       = false
         
+        window.delegate = self
+        def window.mouseDown(notification)
+            close
+        end
+        
         view = ClockView.alloc.initWithFrame(screenBounds, time:time)
         view.face_alpha  = face_alpha
         view.hands_alpha = hands_alpha
@@ -166,6 +171,10 @@ class AppDelegate
         # (when windows were not completely opaque when fading out began)
         clock_windows.each &:close
         self.clock_windows = []
+    end
+    
+    def windowWillClose(notification)
+        clock_windows.delete(notification.object)
     end
     
     
