@@ -49,21 +49,19 @@ class AppDelegate
     def applicationDidChangeScreenParameters(notification)
         # remove clocks from removed screens and (maybe new) primary screen
         allowed_screens = NSScreen.screens.drop(1)
+        
+        old_clock_windows = clock_windows
+        self.clock_windows = []
 
-        clock_windows.each do |w|
+        old_clock_windows.each do |w|
             if !allowed_screens.include?(w.screen)
                 w.delegate = nil
                 w.releasedWhenClosed = true
                 w.close
+            else
+                clock_windows << w
             end
         end
-        
-        clock_windows.select! { |w| allowed_screens.include?(w.screen) }
-        
-        ## add clocks to new screens
-        #t = Time.now
-        #used_screens = clock_windows.map :screen
-        #(allowed_screens - used_screens).each { |scr| setup_screen(scr, t) }
     end
     
     
