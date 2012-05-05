@@ -5,7 +5,7 @@ Display a clock on all of your inactive screens when running an application in f
 Put fullscreenclock.app into your login items (System Preferences/Accounts/&lt;user name&gt;/Login Items) to automatically start it when you startup your computer. You're set and all you have to do now is to startup a fullscreen capable application.
 
 # Compatibilty
-Sadly, not all applications are currently supportet (eg. Counter-Strike Source) but you can double-click fullscreenclock.app and you are shown a preference window where you can show the clocks manually. When you are done working or playing you can hide the clocks in the same way.
+Fullscreen Clock works with all apps I tested it with but if the clocks are not shown automatically you can double-click fullscreenclock.app and you are shown a preference window where you can show the clocks manually. When you are done working or playing you can hide the clocks in the same way.
 
 # Appearance
 You can change the appearance settings by double-clicking fullscreenclock.app when it's already running.
