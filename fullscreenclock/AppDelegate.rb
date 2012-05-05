@@ -46,6 +46,26 @@ class AppDelegate
         window.makeKeyAndOrderFront(self)
     end
     
+    def applicationDidChangeScreenParameters(notification)
+        # remove clocks from removed screens and (maybe new) primary screen
+        allowed_screens = NSScreen.screens.drop(1)
+
+        clock_windows.each do |w|
+            if !allowed_screens.include?(w.screen)
+                w.delegate = nil
+                w.releasedWhenClosed = true
+                w.close
+            end
+        end
+        
+        clock_windows.select! { |w| allowed_screens.include?(w.screen) }
+        
+        ## add clocks to new screens
+        #t = Time.now
+        #used_screens = clock_windows.map :screen
+        #(allowed_screens - used_screens).each { |scr| setup_screen(scr, t) }
+    end
+    
     
     
     ############
