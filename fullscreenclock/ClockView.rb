@@ -74,7 +74,7 @@ class ClockView < NSView
                                                                    byDegrees:degrees_for_units(num_units))
         path.transformUsingAffineTransform(transform)
         
-        NSColor.colorWithCalibratedWhite(1, alpha:hands_alpha).set
+        NSColor.colorWithSRGBRed(1.0, green:0.0, blue:1.4, alpha:hands_alpha).set
         path.fill
     end
     
