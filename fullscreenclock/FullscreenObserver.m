@@ -146,7 +146,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 
 - (BOOL)hasOpenWindowOnPrimaryScreen
 {
-    NSArray *windowNumbers = CFBridgingRelease(CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID));
+    NSArray *windowNumbers = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
     CGRect primaryScreenFrame = NSRectToCGRect([[[NSScreen screens] objectAtIndex:0] frame]);
     BOOL result = NO;
     
@@ -164,6 +164,8 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
         }
     }
     
+    [windowNumbers release];
+
     return result;
 }
 
