@@ -10,7 +10,9 @@ class AppDelegate
     attr_accessor :window, :minute_timer, :clock_windows
     attr_accessor :fading_timer, :fading_step, :fading_interval, :current_alpha
     attr_accessor :background_alpha, :hands_alpha, :face_alpha
-    attr_accessor :defaults
+    attr_accessor :defaults, :visible
+    
+    alias_method :visible?, :visible
     
     include CocoaCompatibility
     
@@ -21,6 +23,8 @@ class AppDelegate
         self.fading_step     = 0.02
         self.fading_interval = 0.05
         self.current_alpha   = 0.0
+
+        self.visible = false
 
         FullscreenObserver.sharedFullscreenObserver.addObserver(self, forKeyPath:"fullscreenMode", options:NSKeyValueObservingOptionNew, context:nil)
 
@@ -138,7 +142,7 @@ class AppDelegate
     
         
     def toggle_clocks(sender)
-        if minute_timer.nil? or not minute_timer.valid?
+        if !visible?
             setup_clocks
         else
             teardown_clocks
@@ -171,6 +175,7 @@ class AppDelegate
             # no need to create new clocks because the old ones are still fading out
         end
         
+        self.visible = true
         fade_in
     end
     
@@ -213,6 +218,7 @@ class AppDelegate
     end
     
     def teardown_clocks()
+        self.visible = false
         fade_out
     end
     
