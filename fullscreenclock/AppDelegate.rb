@@ -8,7 +8,7 @@ require 'exts'
 class AppDelegate
     attr_accessor :background_alpha_slider, :face_alpha_slider, :hands_alpha_slider
     attr_accessor :window, :minute_timer, :clock_windows
-    attr_accessor :fading_timer, :fading_step, :fading_interval
+    attr_accessor :fading_timer, :fading_step, :fading_interval, :current_alpha
     attr_accessor :background_alpha, :hands_alpha, :face_alpha
     attr_accessor :fullscreen_notifier, :defaults
     
@@ -20,10 +20,14 @@ class AppDelegate
 
         self.fading_step     = 0.02
         self.fading_interval = 0.05
-        
-        self.fullscreen_notifier = FullscreenNotifier.new
+        self.current_alpha   = 0.0
+
+        self.fullscreen_notifier = FullscreenNotifier.sharedFullscreenNotifier
         fullscreen_notifier.setFullscreenCallbackTarget(self, enterSelector:'on_fullscreen_enter',
-                                                              exitSelector:'on_fullscreen_exit')
+                                                               exitSelector:'on_fullscreen_exit')
+
+
+        NSWorkspace.sharedWorkspace.notificationCenter.addObserver(self, selector:'workspaceChanged:', name:NSWorkspaceActiveSpaceDidChangeNotification, object:nil)
         
         
         # set alpha values
@@ -41,6 +45,9 @@ class AppDelegate
         window.level = NSFloatingWindowLevel
     end
     
+    def workspaceChanged(trigger)
+        clean_up
+    end
     
     def applicationShouldHandleReopen(app, hasVisibleWindows:flag)
         window.makeKeyAndOrderFront(self)
@@ -207,6 +214,7 @@ class AppDelegate
         # (when windows were not completely opaque when fading out began)
         clock_windows.each &:close
         self.clock_windows = []
+        self.current_alpha = 0.0
     end
     
     def windowWillClose(notification)
@@ -223,19 +231,14 @@ class AppDelegate
     private
     
     
-    def fade(starting_alpha, fading_selector)
-        alpha = starting_alpha
-        
-        unless fading_timer.nil? or not fading_timer.valid?
-            alpha = fading_timer.userInfo[:alpha]
-            fading_timer.invalidate
-        end
+    def fade(fading_selector)
+        fading_timer.invalidate unless fading_timer.nil?
         
         self.fading_timer =
             NSTimer.timerWithTimeInterval(fading_interval,
                                           target:self,
                                           selector:fading_selector,
-                                          userInfo:{ :alpha => alpha },
+                                          userInfo:nil,
                                           repeats:true)
         
         # don't use NSDefaultRunloopMode because Mac OS X Lion pauses timers
@@ -245,29 +248,29 @@ class AppDelegate
     
     
     def fade_in()
-        fade(0.0, 'fade_in_do:')
+        fade('fade_in_do:')
     end
     
     def fade_out()
-        fade(1.0, 'fade_out_do:')
+        fade('fade_out_do:')
     end
     
     
     def fade_step_do(timer, step)
-        timer.userInfo[:alpha] += step
-        clock_windows.each { |w| w.alphaValue = timer.userInfo[:alpha] }
+        self.current_alpha += step
+        clock_windows.each { |w| w.alphaValue = current_alpha }
     end
     
     
     def fade_in_do(timer)
         fade_step_do(timer, +fading_step)
-        timer.invalidate if timer.userInfo[:alpha] >= 1.0
+        timer.invalidate if current_alpha >= 1.0
     end
 
     def fade_out_do(timer)
         fade_step_do(timer, -fading_step)
         
-        if timer.userInfo[:alpha] <= 0.0
+        if current_alpha <= 0.0
             timer.invalidate
             clean_up
         end
