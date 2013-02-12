@@ -10,7 +10,7 @@ class AppDelegate
     attr_accessor :window, :minute_timer, :clock_windows
     attr_accessor :fading_timer, :fading_step, :fading_interval, :current_alpha
     attr_accessor :background_alpha, :hands_alpha, :face_alpha
-    attr_accessor :fullscreen_notifier, :defaults
+    attr_accessor :defaults
     
     include CocoaCompatibility
     
@@ -22,10 +22,7 @@ class AppDelegate
         self.fading_interval = 0.05
         self.current_alpha   = 0.0
 
-        self.fullscreen_notifier = FullscreenNotifier.sharedFullscreenNotifier
-        fullscreen_notifier.setFullscreenCallbackTarget(self, enterSelector:'on_fullscreen_enter',
-                                                               exitSelector:'on_fullscreen_exit')
-
+        FullscreenObserver.sharedFullscreenObserver.addObserver(self, forKeyPath:"fullscreenMode", options:NSKeyValueObservingOptionNew, context:nil)
 
         NSWorkspace.sharedWorkspace.notificationCenter.addObserver(self, selector:'workspaceChanged:', name:NSWorkspaceActiveSpaceDidChangeNotification, object:nil)
         
@@ -45,6 +42,15 @@ class AppDelegate
         window.level = NSFloatingWindowLevel
     end
     
+    def observeValueForKeyPath(keyPath, ofObject:object, change:change, context:context)
+        # keyPath is "fullscreenMode" of object FullscreenObserver.sharedFullscreenObserver
+        if change[NSKeyValueChangeNewKey].boolValue
+            setup_clocks
+        else
+            teardown_clocks
+        end
+    end
+
     def workspaceChanged(trigger)
         clean_up
     end
@@ -72,7 +78,7 @@ class AppDelegate
         
         
         # add clocks to new screens
-        if fullscreen_notifier.isFullscreenMode
+        if FullscreenObserver.sharedFullscreenObserver.isFullscreenMode
             t = Time.now
             used_screens = clock_windows.map &:screen
             unused_screens = allowed_screens - used_screens

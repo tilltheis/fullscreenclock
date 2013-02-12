@@ -1,10 +1,10 @@
-#import "FullscreenNotifier.h"
+#import "FullscreenObserver.h"
 
 #import <Carbon/Carbon.h>
 
 /**
  
- The FullscreenNotifier sends out notifications whenever the primary screen (the
+ The FullscreenObserver sends out notifications whenever the primary screen (the
  one with the menu bar) enters or exits the fullscreen mode (e.g. when playing
  a game or watching a movie).
  
@@ -31,23 +31,19 @@
 
 const NSTimeInterval delay = 0.01;
 
-static FullscreenNotifier *sharedFullscreenNotifier;
+static FullscreenObserver *sharedFullscreenObserver;
 
 
 OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRef inEvent, void *fullscreenNotifier)
 {
-    return [(FullscreenNotifier *)fullscreenNotifier performSelector:@selector(menuBarVisibilityChanged:) withObject:(id)inEvent];
+    return [(FullscreenObserver *)fullscreenNotifier performSelector:@selector(menuBarVisibilityChanged:) withObject:(id)inEvent];
 }
 
 
-@interface FullscreenNotifier ()
+@interface FullscreenObserver ()
 
 @property (getter=isFullscreenMode) BOOL fullscreenMode;
 @property (getter=isMenuBarVisible) BOOL menuBarVisible;
-
-@property id target;
-@property SEL enterSelector;
-@property SEL exitSelector;
 
 @property (retain) NSTimer *timer;
 
@@ -64,11 +60,11 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 
 @end
 
-@implementation FullscreenNotifier
+@implementation FullscreenObserver
 
-+ (FullscreenNotifier *)sharedFullscreenNotifier
++ (FullscreenObserver *)sharedFullscreenObserver
 {
-    return sharedFullscreenNotifier;
+    return sharedFullscreenObserver;
 }
 
 + (void)initialize
@@ -76,7 +72,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
     static BOOL initialized = NO;
     
     if (!initialized) {
-        sharedFullscreenNotifier = [FullscreenNotifier new];
+        sharedFullscreenObserver = [FullscreenObserver new];
         initialized = YES;
     }
 }
@@ -103,13 +99,6 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
     [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
     [self.timer release];
     [super dealloc];
-}
-
-- (void)setFullscreenCallbackTarget:(id)target_ enterSelector:(SEL)enterSel exitSelector:(SEL)exitSel
-{
-    self.target        = target_;
-    self.enterSelector = enterSel;
-    self.exitSelector  = exitSel;
 }
 
 #pragma mark -
@@ -148,19 +137,11 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 - (void)enterFullscreenMode
 {
     self.fullscreenMode = YES;
-    
-    if (self.target && self.enterSelector) {
-        [self.target performSelector:self.enterSelector];
-    }
 }
 
 - (void)exitFullscreenMode
 {
     self.fullscreenMode = NO;
-    
-    if (self.target && self.exitSelector) {
-        [self.target performSelector:self.exitSelector];
-    }
 }
 
 - (BOOL)hasOpenWindowOnPrimaryScreen
