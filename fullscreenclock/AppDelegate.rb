@@ -140,28 +140,30 @@ class AppDelegate
     end
     
     def setup_clocks()
-        clean_up
-        
-        t = Time.now + 60 # +1 minute
-        fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min)
-        self.minute_timer = NSTimer.alloc.initWithFireDate(fire_date,
-                                                           interval:60,
-                                                           target:self,
-                                                           selector:'update_clock_view:',
-                                                           userInfo:nil,
-                                                           repeats:true)
-        NSRunLoop.currentRunLoop.addTimer(self.minute_timer, forMode:NSDefaultRunLoopMode)
-        
-        # draw clocks on secondary screens
-        # screens.first is the the mainScreen - remove it
-        # (we can't use delete() because its destructive)
-        screens = NSScreen.screens.drop(1)
-        
-        t = Time.now
-        screens.each { |scr| setup_screen(scr, t) }
-        
-        # float command window above the clock windows
-        window.orderFront(self) if window.isKeyWindow
+        if clock_windows.empty?
+            t = Time.now + 60 # +1 minute
+            fire_date = Time.mktime(t.year, t.month, t.day, t.hour, t.min)
+            self.minute_timer = NSTimer.alloc.initWithFireDate(fire_date,
+                                                               interval:60,
+                                                               target:self,
+                                                               selector:'update_clock_view:',
+                                                               userInfo:nil,
+                                                               repeats:true)
+            NSRunLoop.currentRunLoop.addTimer(self.minute_timer, forMode:NSDefaultRunLoopMode)
+
+            # draw clocks on secondary screens
+            # screens.first is the the mainScreen - remove it
+            # (we can't use delete() because its destructive)
+            screens = NSScreen.screens.drop(1)
+
+            t = Time.now
+            screens.each { |scr| setup_screen(scr, t) }
+
+            # float command window above the clock windows
+            window.orderFront(self) if window.isKeyWindow
+        else
+            # no need to create new clocks because the old ones are still fading out
+        end
         
         fade_in
     end
@@ -205,7 +207,6 @@ class AppDelegate
     end
     
     def teardown_clocks()
-        minute_timer.invalidate unless minute_timer.nil?
         fade_out
     end
     
@@ -215,6 +216,7 @@ class AppDelegate
         clock_windows.each &:close
         self.clock_windows = []
         self.current_alpha = 0.0
+        minute_timer.invalidate unless minute_timer.nil?
     end
     
     def windowWillClose(notification)
