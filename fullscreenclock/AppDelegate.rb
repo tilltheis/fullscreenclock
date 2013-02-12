@@ -329,17 +329,4 @@ class AppDelegate
             end
         end
     end
-    
-    
-    
-    ###########
-    # ALIASES #
-    ###########
-    
-    
-    public
-    
-    
-    alias_method :on_fullscreen_enter, :setup_clocks
-    alias_method :on_fullscreen_exit,  :teardown_clocks
 end
