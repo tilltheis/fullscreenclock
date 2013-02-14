@@ -33,6 +33,16 @@ class ClockView < NSView
         self.needsDisplay = true
     end
     
+    def to_image
+        representation = bitmapImageRepForCachingDisplayInRect(bounds)
+        cacheDisplayInRect(bounds, toBitmapImageRep:representation)
+        
+        image = NSImage.alloc.initWithSize(bounds.size)
+        image.addRepresentation(representation)
+        
+        image
+    end
+    
     
     private
     
