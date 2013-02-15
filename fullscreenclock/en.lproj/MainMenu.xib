@@ -1591,7 +1591,6 @@
 							<string key="NSFrame">{{14, 12}, {216, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="620586826">
 								<int key="NSCellFlags">67108864</int>
@@ -2440,6 +2439,22 @@
 						<reference key="destination" ref="997421265"/>
 					</object>
 					<int key="connectionID">604</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">toggle_clocks_menu_item</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="472259225"/>
+					</object>
+					<int key="connectionID">605</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggle_clocks:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="472259225"/>
+					</object>
+					<int key="connectionID">606</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4137,7 +4152,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">604</int>
+			<int key="maxID">606</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4195,11 +4210,13 @@
 							<string>hands_alpha_slider</string>
 							<string>minute_timer</string>
 							<string>status_item_menu</string>
+							<string>toggle_clocks_menu_item</string>
 							<string>visible</string>
 							<string>window</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4236,6 +4253,7 @@
 							<string>hands_alpha_slider</string>
 							<string>minute_timer</string>
 							<string>status_item_menu</string>
+							<string>toggle_clocks_menu_item</string>
 							<string>visible</string>
 							<string>window</string>
 						</object>
@@ -4295,6 +4313,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">status_item_menu</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">toggle_clocks_menu_item</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">

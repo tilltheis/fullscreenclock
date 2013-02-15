@@ -11,7 +11,7 @@ class AppDelegate
     attr_accessor :fading_timer, :fading_step, :fading_interval, :current_alpha
     attr_accessor :background_alpha, :hands_alpha, :face_alpha
     attr_accessor :defaults, :visible
-    attr_accessor :status_item_menu
+    attr_accessor :status_item_menu, :toggle_clocks_menu_item
     
     alias_method :visible?, :visible
     
@@ -151,8 +151,10 @@ class AppDelegate
         
     def toggle_clocks(sender)
         if !visible?
+            self.toggle_clocks_menu_item.title = NSLocalizedString("Hide Clocks")
             setup_clocks
         else
+            self.toggle_clocks_menu_item.title = NSLocalizedString("Show Clocks")
             teardown_clocks
         end
     end

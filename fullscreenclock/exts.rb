@@ -27,6 +27,10 @@ module CocoaCompatibility
         yield if block_given?
         didChangeValueForKey(name)
     end
+
+    def NSLocalizedString(key, value = nil)
+        NSBundle.mainBundle.localizedStringForKey(key, value:value, table:nil)
+    end
 end
 
 
