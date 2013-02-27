@@ -19,6 +19,8 @@
 		BB54A53213A2AF3700421507 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53013A2AF3700421507 /* MainMenu.xib */; };
 		BB54A53513A2AF3700421507 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53413A2AF3700421507 /* rb_main.rb */; };
 		BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53613A2AF3700421507 /* AppDelegate.rb */; };
+		BB593D3D16DE780200B064A7 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB593D3B16DE780200B064A7 /* LaunchAtLoginController.m */; };
+		BB593D3E16DE780200B064A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB593D3C16DE780200B064A7 /* README.md */; };
 		BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB749E6F13ED841F001D3324 /* fullscreenclock.icns */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,9 @@
 		BB54A53113A2AF3700421507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BB54A53413A2AF3700421507 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		BB54A53613A2AF3700421507 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		BB593D3A16DE780200B064A7 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
+		BB593D3B16DE780200B064A7 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
+		BB593D3C16DE780200B064A7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		BB749E6F13ED841F001D3324 /* fullscreenclock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fullscreenclock.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +68,7 @@
 				BB54A52613A2AF3600421507 /* fullscreenclock */,
 				BB54A52013A2AF3600421507 /* Frameworks */,
 				BB54A51E13A2AF3600421507 /* Products */,
+				BB593D3916DE780200B064A7 /* LaunchAtLoginController */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +131,16 @@
 				BB54A53413A2AF3700421507 /* rb_main.rb */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		BB593D3916DE780200B064A7 /* LaunchAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				BB593D3A16DE780200B064A7 /* LaunchAtLoginController.h */,
+				BB593D3B16DE780200B064A7 /* LaunchAtLoginController.m */,
+				BB593D3C16DE780200B064A7 /* README.md */,
+			);
+			path = LaunchAtLoginController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +216,7 @@
 				BB4C09C213A6863000535E8B /* exts.rb in Resources */,
 				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
 				BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */,
+				BB593D3E16DE780200B064A7 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +229,7 @@
 			files = (
 				BB54A52E13A2AF3600421507 /* main.m in Sources */,
 				BB100E4E13A39F0300335274 /* FullscreenObserver.m in Sources */,
+				BB593D3D16DE780200B064A7 /* LaunchAtLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
