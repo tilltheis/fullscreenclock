@@ -105,6 +105,11 @@ class AppDelegate
         teardown_clocks if clock_windows.empty?
     end
     
+    def showAboutPanel(sender)
+        NSApp.orderFrontStandardAboutPanel(sender)
+        NSApp.activateIgnoringOtherApps(true) # or won't show if called via status bar menu
+    end
+    
     
     
     ############

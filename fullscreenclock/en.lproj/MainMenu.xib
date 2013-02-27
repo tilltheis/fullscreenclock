@@ -1500,7 +1500,7 @@
 											<string key="NSFrame">{{18, 15}, {172, 19}}</string>
 											<reference key="NSSuperview" ref="629331686"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="591563512"/>
+											<reference key="NSNextKeyView" ref="75511809"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="6199658">
 												<int key="NSCellFlags">-2080374784</int>
@@ -1608,7 +1608,7 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSButton" id="591563512">
+						<object class="NSButton" id="75511809">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 92}, {208, 18}}</string>
@@ -1617,13 +1617,13 @@
 							<reference key="NSNextKeyView" ref="808828072"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="402091285">
+							<object class="NSButtonCell" key="NSCell" id="854658776">
 								<int key="NSCellFlags">-2080374784</int>
 								<int key="NSCellFlags2">268435456</int>
 								<string key="NSContents">Launch at Login</string>
 								<reference key="NSSupport" ref="778310607"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="591563512"/>
+								<reference key="NSControlView" ref="75511809"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">2</int>
 								<object class="NSCustomResource" key="NSNormalImage">
@@ -1725,7 +1725,7 @@
 			<object class="NSUserDefaultsController" id="277073410">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
-			<object class="NSCustomObject" id="195728889">
+			<object class="NSCustomObject" id="315512187">
 				<string key="NSClassName">LaunchAtLoginController</string>
 			</object>
 		</object>
@@ -2501,6 +2501,14 @@
 					<int key="connectionID">606</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showAboutPanel:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="673934271"/>
+					</object>
+					<int key="connectionID">673</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: background_alpha</string>
 						<reference key="source" ref="23333379"/>
@@ -2567,11 +2575,11 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: launchAtLogin</string>
-						<reference key="source" ref="591563512"/>
-						<reference key="destination" ref="195728889"/>
+						<reference key="source" ref="75511809"/>
+						<reference key="destination" ref="315512187"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="591563512"/>
-							<reference key="NSDestination" ref="195728889"/>
+							<reference key="NSSource" ref="75511809"/>
+							<reference key="NSDestination" ref="315512187"/>
 							<string key="NSLabel">value: launchAtLogin</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">launchAtLogin</string>
@@ -3139,7 +3147,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="228193930"/>
 							<reference ref="634908423"/>
-							<reference ref="591563512"/>
+							<reference ref="75511809"/>
 							<reference ref="808828072"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
@@ -3828,21 +3836,21 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">629</int>
-						<reference key="object" ref="591563512"/>
+						<reference key="object" ref="75511809"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="402091285"/>
+							<reference ref="854658776"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">630</int>
-						<reference key="object" ref="402091285"/>
-						<reference key="parent" ref="591563512"/>
+						<reference key="object" ref="854658776"/>
+						<reference key="parent" ref="75511809"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">668</int>
-						<reference key="object" ref="195728889"/>
+						<reference key="object" ref="315512187"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -4238,7 +4246,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">671</int>
+			<int key="maxID">673</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4251,10 +4259,12 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>restore_defaults:</string>
+							<string>showAboutPanel:</string>
 							<string>toggle_clocks:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -4264,12 +4274,17 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>restore_defaults:</string>
+							<string>showAboutPanel:</string>
 							<string>toggle_clocks:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">restore_defaults:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showAboutPanel:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

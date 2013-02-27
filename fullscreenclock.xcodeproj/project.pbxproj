@@ -21,6 +21,8 @@
 		BB54A53713A2AF3700421507 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = BB54A53613A2AF3700421507 /* AppDelegate.rb */; };
 		BB593D3D16DE780200B064A7 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB593D3B16DE780200B064A7 /* LaunchAtLoginController.m */; };
 		BB593D3E16DE780200B064A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB593D3C16DE780200B064A7 /* README.md */; };
+		BB593D4016DE7A1300B064A7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BB593D3F16DE7A1300B064A7 /* Credits.rtf */; };
+		BB593D4216DE7BBB00B064A7 /* LaunchAtLoginControllerLicense.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BB593D4116DE7BBB00B064A7 /* LaunchAtLoginControllerLicense.rtf */; };
 		BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB749E6F13ED841F001D3324 /* fullscreenclock.icns */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		BB593D3A16DE780200B064A7 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		BB593D3B16DE780200B064A7 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		BB593D3C16DE780200B064A7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BB593D3F16DE7A1300B064A7 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		BB593D4116DE7BBB00B064A7 /* LaunchAtLoginControllerLicense.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LaunchAtLoginControllerLicense.rtf; sourceTree = "<group>"; };
 		BB749E6F13ED841F001D3324 /* fullscreenclock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fullscreenclock.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 				BB749E6F13ED841F001D3324 /* fullscreenclock.icns */,
 				BB4C09D513A6895F00535E8B /* UserDefaults.plist */,
 				BB54A53013A2AF3700421507 /* MainMenu.xib */,
+				BB593D3F16DE7A1300B064A7 /* Credits.rtf */,
+				BB593D4116DE7BBB00B064A7 /* LaunchAtLoginControllerLicense.rtf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -217,6 +223,8 @@
 				BB4C09D613A6895F00535E8B /* UserDefaults.plist in Resources */,
 				BB749E7013ED841F001D3324 /* fullscreenclock.icns in Resources */,
 				BB593D3E16DE780200B064A7 /* README.md in Resources */,
+				BB593D4016DE7A1300B064A7 /* Credits.rtf in Resources */,
+				BB593D4216DE7BBB00B064A7 /* LaunchAtLoginControllerLicense.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
