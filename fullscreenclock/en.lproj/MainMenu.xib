@@ -1668,14 +1668,6 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="451333037">
-						<reference key="NSMenu" ref="997421265"/>
-						<string key="NSTitle">Disable for an Hour</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="1061754115">
 						<reference key="NSMenu" ref="997421265"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -3790,7 +3782,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="472259225"/>
-							<reference ref="451333037"/>
 							<reference ref="673934271"/>
 							<reference ref="1061754115"/>
 							<reference ref="255327397"/>
@@ -3802,11 +3793,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">595</int>
 						<reference key="object" ref="472259225"/>
-						<reference key="parent" ref="997421265"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">596</int>
-						<reference key="object" ref="451333037"/>
 						<reference key="parent" ref="997421265"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -4023,7 +4009,6 @@
 					<string>584.IBPluginDependency</string>
 					<string>594.IBPluginDependency</string>
 					<string>595.IBPluginDependency</string>
-					<string>596.IBPluginDependency</string>
 					<string>597.IBPluginDependency</string>
 					<string>598.IBPluginDependency</string>
 					<string>599.IBPluginDependency</string>
@@ -4110,7 +4095,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{380, 496}, {480, 360}}</string>
 					<boolean value="NO"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
