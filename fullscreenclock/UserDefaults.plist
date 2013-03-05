@@ -8,5 +8,7 @@
 	<real>0.4</real>
 	<key>hands_alpha</key>
 	<real>0.4</real>
+	<key>show_menu_bar_icon</key>
+	<true/>
 </dict>
 </plist>

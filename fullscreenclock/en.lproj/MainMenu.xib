@@ -1324,7 +1324,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {244, 267}}</string>
+				<string key="NSWindowRect">{{335, 390}, {244, 287}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Fullscreen Clock</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -1528,7 +1528,7 @@
 									<reference key="NSNextKeyView" ref="80807244"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{17, 112}, {210, 135}}</string>
+							<string key="NSFrame">{{17, 132}, {210, 135}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="629331686"/>
@@ -1611,10 +1611,10 @@
 						<object class="NSButton" id="75511809">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 92}, {208, 18}}</string>
+							<string key="NSFrame">{{18, 112}, {208, 18}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="808828072"/>
+							<reference key="NSNextKeyView" ref="57095680"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="854658776">
@@ -1626,11 +1626,11 @@
 								<reference key="NSControlView" ref="75511809"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">2</int>
-								<object class="NSCustomResource" key="NSNormalImage">
+								<object class="NSCustomResource" key="NSNormalImage" id="165271907">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSSwitch</string>
 								</object>
-								<object class="NSButtonImageSource" key="NSAlternateImage">
+								<object class="NSButtonImageSource" key="NSAlternateImage" id="749665721">
 									<string key="NSImageName">NSSwitch</string>
 								</object>
 								<string key="NSAlternateContents"/>
@@ -1640,13 +1640,40 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
+						<object class="NSButton" id="57095680">
+							<reference key="NSNextResponder" ref="439893737"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{18, 92}, {208, 18}}</string>
+							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="808828072"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="790844798">
+								<int key="NSCellFlags">-2080374784</int>
+								<int key="NSCellFlags2">268435456</int>
+								<string key="NSContents">Show Menu Bar Icon</string>
+								<reference key="NSSupport" ref="778310607"/>
+								<string key="NSCellIdentifier">_NS:9</string>
+								<reference key="NSControlView" ref="57095680"/>
+								<int key="NSButtonFlags">1211912448</int>
+								<int key="NSButtonFlags2">2</int>
+								<reference key="NSNormalImage" ref="165271907"/>
+								<reference key="NSAlternateImage" ref="749665721"/>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						</object>
 					</object>
-					<string key="NSFrameSize">{244, 267}</string>
+					<string key="NSFrameSize">{244, 287}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="228193930"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -2501,6 +2528,14 @@
 					<int key="connectionID">673</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">changeMenuBarIconVisibility:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="57095680"/>
+					</object>
+					<int key="connectionID">685</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: background_alpha</string>
 						<reference key="source" ref="23333379"/>
@@ -2579,6 +2614,22 @@
 						</object>
 					</object>
 					<int key="connectionID">671</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.show_menu_bar_icon</string>
+						<reference key="source" ref="57095680"/>
+						<reference key="destination" ref="277073410"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="57095680"/>
+							<reference key="NSDestination" ref="277073410"/>
+							<string key="NSLabel">value: values.show_menu_bar_icon</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.show_menu_bar_icon</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">684</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3138,9 +3189,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="228193930"/>
-							<reference ref="634908423"/>
 							<reference ref="75511809"/>
+							<reference ref="57095680"/>
 							<reference ref="808828072"/>
+							<reference ref="634908423"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -3839,6 +3891,20 @@
 						<reference key="object" ref="315512187"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">674</int>
+						<reference key="object" ref="57095680"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="790844798"/>
+						</object>
+						<reference key="parent" ref="439893737"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">675</int>
+						<reference key="object" ref="790844798"/>
+						<reference key="parent" ref="57095680"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -4017,6 +4083,8 @@
 					<string>629.IBPluginDependency</string>
 					<string>630.IBPluginDependency</string>
 					<string>668.IBPluginDependency</string>
+					<string>674.IBPluginDependency</string>
+					<string>675.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>73.IBPluginDependency</string>
 					<string>74.IBPluginDependency</string>
@@ -4216,6 +4284,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -4230,7 +4300,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">673</int>
+			<int key="maxID">685</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4242,12 +4312,14 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeMenuBarIconVisibility:</string>
 							<string>restore_defaults:</string>
 							<string>showAboutPanel:</string>
 							<string>toggle_clocks:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4257,12 +4329,17 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeMenuBarIconVisibility:</string>
 							<string>restore_defaults:</string>
 							<string>showAboutPanel:</string>
 							<string>toggle_clocks:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">changeMenuBarIconVisibility:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">restore_defaults:</string>
 								<string key="candidateClassName">id</string>
@@ -4294,6 +4371,7 @@
 							<string>hands_alpha</string>
 							<string>hands_alpha_slider</string>
 							<string>minute_timer</string>
+							<string>status_item</string>
 							<string>status_item_menu</string>
 							<string>toggle_clocks_menu_item</string>
 							<string>visible</string>
@@ -4301,6 +4379,7 @@
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4337,6 +4416,7 @@
 							<string>hands_alpha</string>
 							<string>hands_alpha_slider</string>
 							<string>minute_timer</string>
+							<string>status_item</string>
 							<string>status_item_menu</string>
 							<string>toggle_clocks_menu_item</string>
 							<string>visible</string>
@@ -4394,6 +4474,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">minute_timer</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">status_item</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
