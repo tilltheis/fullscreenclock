@@ -189,10 +189,8 @@ class AppDelegate
         
     def toggle_clocks(sender)
         if !visible?
-            self.toggle_clocks_menu_item.title = NSLocalizedString("Hide Clocks")
             setup_clocks
         else
-            self.toggle_clocks_menu_item.title = NSLocalizedString("Show Clocks")
             teardown_clocks
         end
     end
@@ -281,6 +279,10 @@ class AppDelegate
     
     def windowWillClose(notification)
         clock_windows.delete(notification.object)
+        
+        if clock_windows.empty?
+            self.visible = false
+        end
     end
     
     
@@ -375,6 +377,13 @@ class AppDelegate
             self.clock_windows.each do |win|
                 win.contentView.subviews.first.hands_alpha = alpha
             end
+        end
+    end
+    
+    def visible=(is_visible)
+        set_ivar(:visible, is_visible) do
+            title = if is_visible then "Hide Clocks" else "Show Clocks" end
+            self.toggle_clocks_menu_item.title = NSLocalizedString(title)
         end
     end
 end
