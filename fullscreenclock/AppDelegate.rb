@@ -104,6 +104,11 @@ class AppDelegate
         NSApp.activateIgnoringOtherApps(true) # or won't show if called via status bar menu
     end
     
+    def showPreferencesWindow(sender)
+        window.makeKeyAndOrderFront(sender)
+        NSApp.activateIgnoringOtherApps(true) # or won't be focused if called via status bar menu
+    end
+    
     def changeMenuBarIconVisibility(sender)
         if sender.state == 0
             hide_menu_bar_icon
