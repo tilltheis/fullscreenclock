@@ -269,12 +269,14 @@ class AppDelegate
     end
     
     def clean_up()
+        minute_timer.invalidate unless minute_timer.nil?
+        fading_timer.invalidate unless fading_timer.nil?
+
         # close windows here because timer doesn't always take the same time
         # (when windows were not completely opaque when fading out began)
         clock_windows.each &:close
         self.clock_windows = []
         self.current_alpha = 0.0
-        minute_timer.invalidate unless minute_timer.nil?
     end
     
     def windowWillClose(notification)
@@ -282,6 +284,7 @@ class AppDelegate
         
         if clock_windows.empty?
             self.visible = false
+            clean_up
         end
     end
     
