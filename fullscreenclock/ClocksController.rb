@@ -54,7 +54,6 @@ public
         self.windows = []
 
         old_clock_windows.each do |window|
-            puts "old_clock_windows.each"
             if !allowed_screens.include?(window.screen)
                 window.delegate = nil
                 window.releasedWhenClosed = true
