@@ -11,7 +11,7 @@ class AppDelegate
     attr_accessor :background_alpha_slider, :face_alpha_slider, :hands_alpha_slider
     attr_accessor :window
     attr_accessor :defaults
-    attr_accessor :status_item, :status_item_menu, :toggle_clocks_menu_item
+    attr_accessor :status_item, :status_item_menu, :toggle_clocks_menu_item, :toggle_clocks_button
 
     attr_accessor :clocks_controller
 
@@ -52,6 +52,7 @@ class AppDelegate
             is_visible = change[NSKeyValueChangeNewKey]
             title = if is_visible then "Hide Clocks" else "Show Clocks" end
             self.toggle_clocks_menu_item.title = NSLocalizedString(title)
+            self.toggle_clocks_button.title = NSLocalizedString(title)
         
             # float command window above the clock windows
             window.orderFront(self) if window.isKeyWindow

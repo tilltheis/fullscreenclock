@@ -1573,7 +1573,7 @@
 							<object class="NSButtonCell" key="NSCell" id="548440815">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Toggle Clock</string>
+								<string key="NSContents">Show Clocks</string>
 								<reference key="NSSupport" ref="778310607"/>
 								<reference key="NSControlView" ref="808828072"/>
 								<int key="NSButtonFlags">-2038284288</int>
@@ -2534,6 +2534,14 @@
 						<reference key="destination" ref="255327397"/>
 					</object>
 					<int key="connectionID">686</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">toggle_clocks_button</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="808828072"/>
+					</object>
+					<int key="connectionID">694</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4284,7 +4292,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">693</int>
+			<int key="maxID">694</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4356,11 +4364,13 @@
 							<string>hands_alpha_slider</string>
 							<string>status_item</string>
 							<string>status_item_menu</string>
+							<string>toggle_clocks_button</string>
 							<string>toggle_clocks_menu_item</string>
 							<string>window</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4383,6 +4393,7 @@
 							<string>hands_alpha_slider</string>
 							<string>status_item</string>
 							<string>status_item_menu</string>
+							<string>toggle_clocks_button</string>
 							<string>toggle_clocks_menu_item</string>
 							<string>window</string>
 						</object>
@@ -4414,6 +4425,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">status_item_menu</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">toggle_clocks_button</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
