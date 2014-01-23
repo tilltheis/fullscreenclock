@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString *const FullscreenObserverFullscreenModeKeyPath;
 
 @interface FullscreenObserver : NSObject {
 @private

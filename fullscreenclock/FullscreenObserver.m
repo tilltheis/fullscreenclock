@@ -2,6 +2,7 @@
 
 #import <Carbon/Carbon.h>
 
+
 /**
  
  The FullscreenObserver sends out notifications whenever the primary screen (the
@@ -29,6 +30,8 @@
 */
 
 
+NSString *const FullscreenObserverFullscreenModeKeyPath = @"fullscreenMode";
+
 const NSTimeInterval delay = 0.01;
 
 static FullscreenObserver *sharedFullscreenObserver;
@@ -36,7 +39,14 @@ static FullscreenObserver *sharedFullscreenObserver;
 
 OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRef inEvent, void *fullscreenNotifier)
 {
-    return [(FullscreenObserver *)fullscreenNotifier performSelector:@selector(menuBarVisibilityChanged:) withObject:(id)inEvent];
+    // get rid of undeclared-selector-warning (http://stackoverflow.com/a/6225023/122594)
+    SEL selector = NSSelectorFromString(@"menuBarVisibilityChanged:");
+    
+    // get rid of may-cause-leak-warning (http://stackoverflow.com/a/7933931/122594)
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    return (OSErr)[(__bridge FullscreenObserver *)fullscreenNotifier performSelector:selector withObject:(__bridge id)inEvent];
+    #pragma clang diagnostic pop
 }
 
 
@@ -86,7 +96,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
             { kEventClassMenu, kEventMenuBarHidden }
         };
         
-        InstallEventHandler(GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)menuBarVisibilityChangedCallback), 2, events, self, nil);
+        InstallEventHandler(GetEventDispatcherTarget(), NewEventHandlerUPP((EventHandlerProcPtr)menuBarVisibilityChangedCallback), 2, events, (__bridge void *)(self), nil);
         
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(workspaceChanged:) name:NSWorkspaceActiveSpaceDidChangeNotification object:nil];
     }
@@ -97,8 +107,6 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 - (void)dealloc
 {
     [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
-    [self.timer release];
-    [super dealloc];
 }
 
 #pragma mark -
@@ -109,6 +117,8 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
     // therefore we have to wait a little (on another thread)
     [self.timer invalidate];
     [NSTimer scheduledTimerWithTimeInterval:delay target:self selector:@selector(fullscreenModeCouldHaveChanged:) userInfo:nil repeats:NO];
+    
+    self.menuBarVisible = [NSMenu menuBarVisible]; // kEventMenuBarShown/Hidden may not be triggered at all
 }
 
 - (OSErr)menuBarVisibilityChanged:(EventRef)event
@@ -127,7 +137,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 
 - (void)fullscreenModeCouldHaveChanged:(id)trigger
 {
-    if (!self.isMenuBarVisible && self.hasOpenWindowOnPrimaryScreen) {
+    if ((!self.isMenuBarVisible && self.hasOpenWindowOnPrimaryScreen)) {
         [self enterFullscreenMode];
     } else if (self.isFullscreenMode) {
         [self exitFullscreenMode];
@@ -146,7 +156,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 
 - (BOOL)hasOpenWindowOnPrimaryScreen
 {
-    NSArray *windowNumbers = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+    NSArray *windowNumbers = (__bridge NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
     CGRect primaryScreenFrame = NSRectToCGRect([[[NSScreen screens] objectAtIndex:0] frame]);
     BOOL result = NO;
     
@@ -156,7 +166,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
         {
             CGRect bounds;
             CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)[info objectForKey:(id)kCGWindowBounds], &bounds);
-            
+
             if (CGRectContainsRect(primaryScreenFrame, bounds)) {
                 result = YES;
                 break;
@@ -164,8 +174,6 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
         }
     }
     
-    [windowNumbers release];
-
     return result;
 }
 
