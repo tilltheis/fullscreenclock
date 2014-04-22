@@ -66,6 +66,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 - (void)enterFullscreenMode;
 - (void)exitFullscreenMode;
 
+- (BOOL)primaryScreenHasFocus;
 - (BOOL)hasOpenWindowOnPrimaryScreen;
 
 @end
@@ -137,7 +138,7 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
 
 - (void)fullscreenModeCouldHaveChanged:(id)trigger
 {
-    if ((!self.isMenuBarVisible && self.hasOpenWindowOnPrimaryScreen)) {
+    if (([self hasOpenWindowOnPrimaryScreen] && [self primaryScreenHasFocus])) {
         [self enterFullscreenMode];
     } else if (self.isFullscreenMode) {
         [self exitFullscreenMode];
@@ -154,23 +155,34 @@ OSErr menuBarVisibilityChangedCallback(EventHandlerCallRef inHandlerRef, EventRe
     self.fullscreenMode = NO;
 }
 
+- (CGRect)primaryScreenMenuBarFrame
+{
+    NSRect frame = [[[NSScreen screens] firstObject] frame];
+    frame.size.height = 22;
+    return frame;
+}
+
+- (BOOL)primaryScreenHasFocus
+{
+    return [[NSScreen mainScreen] isEqualTo:[[NSScreen screens] firstObject]];
+}
+
 - (BOOL)hasOpenWindowOnPrimaryScreen
 {
+    CGRect menuBarFrame = NSRectToCGRect([[[NSScreen screens] firstObject] frame]);
+    menuBarFrame.size.height = 22;
+    
     NSArray *windowNumbers = (__bridge NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
-    CGRect primaryScreenFrame = NSRectToCGRect([[[NSScreen screens] objectAtIndex:0] frame]);
-    BOOL result = NO;
+    BOOL result = YES;
     
     for (NSDictionary *info in windowNumbers) {
-        if ([[info objectForKey:(id)kCGWindowSharingState] intValue] != kCGWindowSharingNone &&
-            [[info objectForKey:(id)kCGWindowLayer] intValue] >= 0) // the linen pattern windows of the native (lion) fullscreen impl have a layer of -1
-        {
-            CGRect bounds;
-            CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)[info objectForKey:(id)kCGWindowBounds], &bounds);
-
-            if (CGRectContainsRect(primaryScreenFrame, bounds)) {
-                result = YES;
-                break;
-            }
+        
+        CGRect bounds;
+        CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)[info objectForKey:(id)kCGWindowBounds], &bounds);
+        
+        if (CGRectContainsPoint(menuBarFrame, bounds.origin) && [[info objectForKey:(id)kCGWindowName] isEqualToString:@"Menubar"]) {
+            result = NO;
+            break;
         }
     }
     
